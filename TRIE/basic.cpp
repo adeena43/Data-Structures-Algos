@@ -117,7 +117,6 @@ class Trie{
         }
         return false;
     }
-
     int index = word[depth] - 'A';
     TrieNode* child = root->children[index];
 
@@ -149,6 +148,10 @@ class Trie{
     return false;
 }
 
+
+
+   
+
 void deleteString(const string& word)
 {
     if (searchWord(word))
@@ -157,6 +160,35 @@ void deleteString(const string& word)
     }
 }
 
+
+ 
+    bool prefixUtil(root, word){
+    	//base case
+			if(word.length()==0)
+			{
+				return true;
+			}
+			int index = word[0]-'A';
+			TrieNode* child;
+			
+			//present
+			if(root->children[index] != NULL)
+			{
+				child= root->children[index];
+			}
+			//absent
+			else
+			{
+				return false;
+			}
+			
+			return prefixUtil(child, word.substr(1));
+	}
+    
+    bool searchPrefix(string word)
+    {
+    	return prefixUtil(root, word);
+	}
 		
 };
 
