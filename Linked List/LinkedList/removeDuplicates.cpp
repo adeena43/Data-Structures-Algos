@@ -13,7 +13,7 @@ Node* uniqueSortedList(Node* head)
 	{
 		if((curr -> next != NULL) && curr ->data == curr->next->data)
 		{
-			Node* next_next = curr->nex->next;
+			Node* next_next = curr->next->next;
 			Node* nodeToDelete = curr -> next;
 			delete(nodeToDelete);
 			curr -> next = next_next;
