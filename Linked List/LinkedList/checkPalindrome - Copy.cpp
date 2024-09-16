@@ -1,5 +1,7 @@
 //check if a linke dlist is palindrome
 #include<vector>
+#include<iostream>
+uing namespace std;
 
 bool checkPalindrome(vector<int> arr)
 {
@@ -33,3 +35,10 @@ bool isPalindrome(Node* head)
 	
 	return checkPalindorme(arr);
 }
+
+int main()
+{
+	
+	return 0;
+}
+
